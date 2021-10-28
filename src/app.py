@@ -1,14 +1,12 @@
 from flask import *
 import datetime
 from flask_sqlalchemy import SQLAlchemy
-import pymysql
+import psycopg2
 import jwt
 from functools import *
-#Firstly start your flask server then do operations with db
-
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='mysql://root:root@127.0.0.1:8889/FlaskDB'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:02100964@127.0.0.1:5432/Some_Database'
 app.config['SECRET_KEY']='Secret'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 db=SQLAlchemy(app)
